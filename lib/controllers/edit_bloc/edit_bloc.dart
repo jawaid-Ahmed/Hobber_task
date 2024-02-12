@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hobbertask/repositories/emails_repository.dart';
-import 'package:hobbertask/views/editpage/edit_bloc/edit_event.dart';
-import 'package:hobbertask/views/editpage/edit_bloc/post_state.dart';
+import 'package:hobbertask/controllers/edit_bloc/edit_event.dart';
+import 'package:hobbertask/controllers/edit_bloc/post_state.dart';
 
 class EditEmailBloc extends Bloc<EditEmailEvent, EditEmailState> {
   final EmailRepository emailRepository;

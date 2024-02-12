@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hobbertask/repositories/emails_repository.dart';
 import 'package:hobbertask/views/getpage/getlist.dart';
-import 'package:hobbertask/views/homepage.dart';
-import 'package:hobbertask/views/postpage/post_bloc/post_bloc.dart';
-import 'package:hobbertask/views/postpage/post_bloc/post_event.dart';
-import 'package:hobbertask/views/postpage/post_bloc/post_state.dart';
+import 'package:hobbertask/controllers/post_bloc/post_bloc.dart';
+import 'package:hobbertask/controllers/post_bloc/post_event.dart';
+import 'package:hobbertask/controllers/post_bloc/post_state.dart';
 
 class PostPage extends StatelessWidget {
   PostPage({super.key});
@@ -45,7 +44,7 @@ class PostPage extends StatelessWidget {
                 duration: Duration(seconds: 2),
               ));
 
-              Navigator.of(context).push(
+              Navigator.of(context).pushReplacement(
                   MaterialPageRoute(builder: (c) => const GetEmailsPage()));
             }
           }, child: BlocBuilder<PostEmailBloc, PostEmailsState>(

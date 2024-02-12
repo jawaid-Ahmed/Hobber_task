@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hobbertask/views/editpage/edit_bloc/edit_bloc.dart';
+import 'package:hobbertask/controllers/edit_bloc/edit_bloc.dart';
 import 'package:hobbertask/views/editpage/edit_page.dart';
-import 'package:hobbertask/views/getpage/get_bloc/email_event.dart';
-import 'package:hobbertask/views/getpage/get_bloc/email_state.dart';
-import 'package:hobbertask/views/getpage/get_bloc/emails_bloc.dart';
+import 'package:hobbertask/controllers/get_bloc/email_event.dart';
+import 'package:hobbertask/controllers/get_bloc/email_state.dart';
+import 'package:hobbertask/controllers/get_bloc/emails_bloc.dart';
 import 'package:hobbertask/models/emailmodel.dart';
 import 'package:hobbertask/repositories/emails_repository.dart';
-import 'package:hobbertask/views/postpage/post_bloc/post_bloc.dart';
+import 'package:hobbertask/controllers/post_bloc/post_bloc.dart';
 import 'package:hobbertask/views/postpage/postpage.dart';
 
 class GetEmailsPage extends StatefulWidget {
@@ -73,11 +73,11 @@ class _GetEmailsPageState extends State<GetEmailsPage> {
                     margin: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
-                        color: Colors.grey.shade100),
+                        color: Colors.grey.shade200),
                     child: Row(
                       children: [
                         CircleAvatar(
-                          backgroundColor: Colors.grey.shade200,
+                          backgroundColor: Colors.grey.shade500,
                           radius: 32,
                         ),
                         Expanded(
@@ -115,7 +115,7 @@ class _GetEmailsPageState extends State<GetEmailsPage> {
                               IconButton(
                                   onPressed: () {
                                     Navigator.of(context)
-                                        .push(MaterialPageRoute(
+                                        .pushReplacement(MaterialPageRoute(
                                             builder: (c) => EditPage(
                                                   emailModel: item,
                                                 )));

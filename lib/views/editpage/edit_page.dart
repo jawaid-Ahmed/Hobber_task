@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hobbertask/models/emailmodel.dart';
 import 'package:hobbertask/repositories/emails_repository.dart';
-import 'package:hobbertask/views/editpage/edit_bloc/edit_bloc.dart';
-import 'package:hobbertask/views/editpage/edit_bloc/edit_event.dart';
-import 'package:hobbertask/views/editpage/edit_bloc/post_state.dart';
+import 'package:hobbertask/controllers/edit_bloc/edit_bloc.dart';
+import 'package:hobbertask/controllers/edit_bloc/edit_event.dart';
+import 'package:hobbertask/controllers/edit_bloc/post_state.dart';
 import 'package:hobbertask/views/getpage/getlist.dart';
 
 class EditPage extends StatefulWidget {
@@ -62,7 +62,7 @@ class _EditPageState extends State<EditPage> {
                 duration: Duration(seconds: 2),
               ));
 
-              Navigator.of(context).push(
+              Navigator.of(context).pushReplacement(
                   MaterialPageRoute(builder: (c) => const GetEmailsPage()));
             }
           }, child: BlocBuilder<EditEmailBloc, EditEmailState>(

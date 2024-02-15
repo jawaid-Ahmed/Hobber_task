@@ -1,5 +1,5 @@
 class ApiPaths {
-  static const String baseURl =
+  static const String listingUrl =
       "https://emergingideas.ae/test_apis/read.php?email=?Mickeydamuller@gmail.com";
   static const String createURL =
       "https://emergingideas.ae/test_apis/create.php";
